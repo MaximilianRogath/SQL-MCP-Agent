@@ -55,7 +55,7 @@ Azure Cloud
 
 ```bash
 git clone https://github.com/MaximilianRogath/SQL-MCP-Agent
-cd Contoso-SQL-MCP-Agent
+cd SQL-MCP-Agent
 python -m venv .venv
 .venv\Scripts\activate  # Windows
 pip install -r requirements.txt
