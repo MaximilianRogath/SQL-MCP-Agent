@@ -1,4 +1,4 @@
-# Contoso SQL MCP Agent
+# SQL MCP Agent
 
 An example showing how to build a natural language database agent using the **Microsoft Agent Framework**, **Data API Builder (DAB)** as a SQL MCP Server, and **Azure SQL Database** as the data source.
 
@@ -54,7 +54,7 @@ Azure Cloud
 ### 1. Clone the repository and install Python dependencies
 
 ```bash
-git clone https://github.com/MaximilianRogath/Contoso-SQL-MCP-Agent
+git clone https://github.com/MaximilianRogath/SQL-MCP-Agent
 cd Contoso-SQL-MCP-Agent
 python -m venv .venv
 .venv\Scripts\activate  # Windows
@@ -89,10 +89,10 @@ CREATE TABLE Sales (
 );
 
 INSERT INTO Stores VALUES
-(1, 'Contoso München', 'München', 'Germany'),
+(1, 'Contoso Munich', 'Munich', 'Germany'),
 (2, 'Contoso Berlin', 'Berlin', 'Germany'),
-(3, 'Contoso Wien', 'Wien', 'Austria'),
-(4, 'Contoso Zürich', 'Zürich', 'Switzerland');
+(3, 'Contoso Vienna', 'Vienna', 'Austria'),
+(4, 'Contoso Zurich', 'Zurich', 'Switzerland');
 
 INSERT INTO Sales VALUES
 (1, 1, 'Laptop', 5, '2026-01-15', 4999.95),
