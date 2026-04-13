@@ -1,0 +1,20 @@
+# Environment variables — never commit!
+.env
+
+# Virtual environment
+.venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# DAB
+dotnet-tools.json
+
+# IDEs
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
