@@ -25,12 +25,22 @@
         "allow-credentials": false
       },
       "authentication": {
+        // NOTE: "Unauthenticated" provider and "development" mode are intended
+        // for local development only. For production deployments, configure a
+        // proper authentication provider (e.g. Azure Entra ID) and set
+        // mode to "production". See:
+        // https://learn.microsoft.com/en-us/azure/data-api-builder/authentication
         "provider": "Unauthenticated"
       },
       "mode": "development"
     },
     "telemetry": {
       "open-telemetry": {
+        // NOTE: OpenTelemetry is enabled by default in DAB 2.0 but requires
+        // OTEL_EXPORTER_OTLP_ENDPOINT, OTEL_EXPORTER_OTLP_HEADERS, and
+        // OTEL_SERVICE_NAME to be set. If these variables are not present,
+        // DAB starts normally and skips telemetry export — no action needed
+        // for local development.
         "enabled": true,
         "endpoint": "@env('OTEL_EXPORTER_OTLP_ENDPOINT')",
         "headers": "@env('OTEL_EXPORTER_OTLP_HEADERS')",

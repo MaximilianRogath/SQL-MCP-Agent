@@ -46,6 +46,9 @@ async def run_interactive() -> None:
         name="contoso-sql",
         url=MCP_SERVER_URL,
         description="Query the Contoso Store database for sales and store information.",
+        # NOTE: approval_mode="never_require" is for local development convenience.
+        # Use "always_require" in production to prompt for user confirmation before
+        # each tool call.
         approval_mode="never_require",
         load_prompts=False,
     )

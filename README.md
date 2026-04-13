@@ -12,6 +12,8 @@ The agent connects to the Contoso Store database and answers natural language qu
 - **Multi-turn conversation** with `agent.create_session()` and `InMemoryHistoryProvider`
 - **Passwordless authentication** — `AzureCliCredential` for Azure AI Foundry, and `Authentication=Active Directory Default` in the DAB connection string for Azure SQL — no API keys required
 
+> **Security note:** This project is configured for local development. DAB runs with `Unauthenticated` provider and `development` mode, which means the MCP, REST, and GraphQL endpoints are open without additional authentication. Do not expose this setup publicly without first configuring a proper authentication provider. Read-only access is enforced at the DAB configuration level via `anonymous:read` permissions — no write or delete operations are possible through this agent.
+
 ## Architecture
 
 ```
@@ -26,7 +28,7 @@ Azure Cloud
     └── Sales (SaleId, StoreId, ProductName, Quantity, SaleDate, Revenue)
 ```
 
-> **Production note:** For production deployments, DAB should be deployed to Azure Container Apps. See the [Deploy SQL MCP Server to Azure Container Apps](https://learn.microsoft.com/en-us/azure/data-api-builder/mcp/quickstart-azure-container-apps) quickstart. Once deployed, simply update `MCP_SERVER_URL` in your `.env` to point to the Container Apps endpoint.
+> **Production note:** For production deployments, DAB should be deployed to Azure Container Apps with a proper authentication provider configured. See the [Deploy SQL MCP Server to Azure Container Apps](https://learn.microsoft.com/en-us/azure/data-api-builder/mcp/quickstart-azure-container-apps) quickstart. Once deployed, simply update `MCP_SERVER_URL` in your `.env` to point to the Container Apps endpoint.
 
 ## Project structure
 
@@ -107,7 +109,7 @@ INSERT INTO Sales VALUES
 (10, 2, 'Smartphone', 18, '2026-03-15', 14399.82);
 ```
 
-Make sure to enable **Public network access** and add your client IP address under **Settings → Networking** in the Azure Portal.
+To connect to your database, enable **Public network access** and add your client IP address under **Settings → Networking** in the Azure Portal. Note that enabling public access is a security tradeoff — for production environments, consider using private endpoints or VNet integration instead.
 
 ### 4. Install Data API Builder
 
