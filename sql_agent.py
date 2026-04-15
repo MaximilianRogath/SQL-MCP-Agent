@@ -1,9 +1,8 @@
 """
 sql_agent.py
 ------------
-Contoso Sales Agent built on the Microsoft Agent Framework.
-Uses the SQL MCP Server (Data API Builder) to query the Contoso
-Store database with natural language.
+SQL Agent built on the Microsoft Agent Framework.
+Uses the SQL MCP Server (Data API Builder) to query a Store database with natural language.
 
 Usage:
     python sql_agent.py
