@@ -2,7 +2,7 @@
 sql_agent.py
 ------------
 SQL Agent built on the Microsoft Agent Framework.
-Uses the SQL MCP Server (Data API Builder) to query a Store database with natural language.
+Uses the SQL MCP Server (Data API Builder) to query a store database with natural language.
 
 Usage:
     python sql_agent.py
