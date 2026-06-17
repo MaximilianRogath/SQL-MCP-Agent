@@ -146,7 +146,7 @@ python sql_agent.py
 ## Example interaction
 
 ```
-You: Which products were sold in Munich?
+You: Which products were sold in Munich? 
 Agent: The products sold in Munich are: Laptop, Smartphone, and Headphones.
 
 You: In what quantities?
